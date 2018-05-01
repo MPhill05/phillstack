@@ -1,0 +1,169 @@
+<div class="cover">
+	<div class="cover-text">
+		<h1 id="featured-text">PhillStack</h1>
+		<hr>
+		<p class="lead">Mobile &amp; Web Development</p>
+		<button scrollTo scrollTargetSelector="#contactUs" class="btn">Contact Us!</button>
+		<br>
+        <a scrollTo href="#whatWeDo"><div class="arrow"></div></a>
+	</div>
+</div>
+
+<section class="about" id="whatWeDo">
+    <h2>What we can build for you</h2>
+	<div class="row">	
+		<div class="col-12 col-md-4">
+			<img class="SEO" src="../../assets/SEO.jpg" alt="SEO">
+			<h4>SEO</h4>
+			<p>We focus on SEO to make sure your web pages come up on the
+				first page of search engines.</p>
+		</div>
+		<div class="col-12 col-md-4">
+			<img class="analytics" src="../../assets/analytics.jpg"
+				alt="Analytics">
+			<h4>Analytics</h4>
+			<p>We can provide you with analytics to help you understand what
+				demographic is paying attention to your tech, and provide you
+				insight on how to reach other customers.</p>
+		</div>
+		<div class="col-12 col-md-4">
+			<img class="speed" src="../../assets/speed.jpg" alt="Speed">
+			<h4>Responsive Mobile &amp; Web Apps</h4>
+			<p>Our web apps are built with Angular JavaScript. Think light
+				weight, minimal server use, and lighting fast response. We also have
+				experience building Android &amp; iOS Apps!</p>
+		</div>
+	</div>
+</section>
+
+<section class="projects">
+	<div class="container">
+		<h2>Some of our previous projects</h2>
+		<div class="row" id="Coffi">
+			<div class="col-xs-12 col-md-6">
+				<img class="coffi" src="../../assets/CoffiX.png"
+					alt="Coffi">
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<h3>Coffi</h3>
+				<h5>iOS App</h5>
+				<p>Coffi is an iPhone app built natively in Swift for the working professional and student. The app allows users to find nearby coffee shops and see previous ratings and comments for each shop.</p>
+				<a href="#" style="text-decoration: none;" target="_blank">    <button type="button" class="btn btn-primary">Coming Soon</button>
+				</a>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-xs-12 col-md-6">
+				<img class="boombox" src="../../assets/boomboxcartelsite.png"
+					alt="Boombox Cartel">
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<h3>Boombox Cartel</h3>
+				<h5>Website</h5>
+				<p>The Angular website made to actualize the vision for the EDM
+					duo. This site was made with a focus on keeping the design minimal
+					&amp; functional, and so that any fan of any age could explore the
+					site with ease.</p>
+				<a href="http://www.boomboxcartel.com" style="text-decoration: none;" target="_blank">    <button type="button" class="btn btn-primary">View Project</button>
+				</a>
+			</div>
+		</div>
+		<br>
+		<div class="row" id="barber">
+			<div class="col-xs-12 col-md-6">
+				<img class="barber" src="../../assets/recodiamondsite.png"
+					alt="Reco Diamond">
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<h3>Reco Diamond</h3>
+				<h5>Website</h5>
+				<p>This Angular project was primarily to improve on Reco's
+					current website for his business, giving it a single page feel.
+					Style is everything in his world, and he has a sleek website to
+					match that, but we wanted to make sure the tech matched his goals.
+					We improved the speed of Reco's site by converting it to Angular,
+					and incorporated analytics and SEO to help boost his business.</p>
+				<a href="http://www.recodiamond.com" style="text-decoration: none;" target="_blank">       <button type="button" class="btn btn-primary">View Project</button>
+				</a>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-xs-12 col-md-6">
+				<img class="msdos" src="../../assets/bmagazusite.png"
+					alt="Brian Magazu">
+			</div>
+			<div class="col-sm-12 col-md-6">
+				<h3>Brian Magazu</h3>
+				<h5>Website</h5>
+				<p>This was a bit of a different project. The purpose of this
+					site was to have an "MS-DOS" feel and to act as a secure login for
+					specific clients. Though you can't see much, trust that there is a
+					lot of taking place under the hood.</p>
+				<a href="http://www.q7b2r39mx.com/" style="text-decoration: none;" target="_blank">
+                    <button type="button" class="btn btn-primary">View Project</button>
+                </a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="testimonials">
+	<div class="container">
+		<h2>What people in the past have said about our work</h2>
+		<blockquote>
+			&ldquo;The Phillstack team took on a unique web development job for
+			me in April 2016, one that others wouldn't touch, and which assuredly
+			required a propensity for learning, adapting, and communicating
+			effectively. Let's just say they excelled at all three, delivering
+			exactly what we were looking for ahead of schedule, and keeping me
+			constantly abreast of progress. They truly went above and beyond,
+			even completing small revisions after the task was done, and writing
+			detailed instructions to help us in the future. &rdquo; <cite>&mdash;
+				Brian Magazu</cite>
+		</blockquote>
+	</div>
+</section>
+
+<section class="contact" id="contactUs">
+	<div class="contactForm">
+		<h2>Contact Us!</h2>
+		<form (submit)="sendEmail()" method="post" enctype="text/plain" *ngIf="!isSubscribed">
+			<fieldset class="form-group">
+				<input [(ngModel)]="name" class="form-control" id="name" name="name"
+					placeholder="Full Name" required>
+			</fieldset>
+			<fieldset class="form-group">
+				<input 
+				[(ngModel)]="email" 
+				type="email" 
+				class="form-control"
+				id="email" 
+				name="email" 
+				placeholder="Email" 
+				pattern="[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" 
+				required
+				>
+			</fieldset>
+			<fieldset class="form-group">
+				<input [(ngModel)]="subject" class="form-control" id="subject"
+					name="subject" placeholder="Subject" required>
+			</fieldset>
+			<fieldset class="form-group">
+				<textarea [(ngModel)]="message" class="form-control" id="content"
+					name="message" placeholder="Message" required></textarea>
+			</fieldset>
+			<div title="subscribeButton">
+				<div class="subscribe">
+					<input type="checkbox" value="None" [(ngModel)]="subscribe"
+						id="subscribe" name="check" checked /> <label for="subscription">Stay
+						up to date with us!</label>
+				</div>
+			</div>
+			<button type="submit" id="submit" class="btn btn-primary">Submit</button>
+		</form>
+		<h1 *ngIf="isSubscribed" class="response">THANK YOU</h1>
+<!--		<h1 *ngIf="isSubscribed == null" class="response">AN ERROR HAS OCCURRED. PLEASE REFRESH THE PAGE AND TRY AGAIN</h1>-->
+	</div>
+</section>

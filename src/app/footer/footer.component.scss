@@ -1,0 +1,24 @@
+.navbar-custom {
+    background-color: black;
+    text-align: center;
+    color: #05c4b4;
+    margin: 0;
+}
+
+#footerSocials {
+    padding: 10px;
+    img {
+        width: 23px;
+    }
+}
+
+@media only screen and ( max-width : 849px ) {
+    #footerSocials {
+        img {
+            width: 20px;
+            height: 35px;
+            padding-top: 10px;
+            margin: auto;
+        }
+    }
+}
