@@ -47,6 +47,9 @@ img {
 	.cover {
 		padding: 0 20%;
 	}
+    .arrow {
+        bottom: 0;
+    }
 }
 
 .cover {
@@ -122,7 +125,7 @@ hr {
 .about {
     background: white;
     height: auto;
-    width: 80%;
+    width: 100%;
     margin: auto;
     h4 {
         text-align: center;

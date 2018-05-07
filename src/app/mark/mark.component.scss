@@ -123,12 +123,14 @@ hr {
     text-align: center;
     color: white;
     text-shadow: 3px 3px 3px #000;
+    padding-bottom: 20px;
 }
 
 .about p {
     margin: auto;
     padding-left: 200px;
     padding-right: 200px;
+    padding-bottom: 20px;
     color: white;
     text-shadow: 3px 3px 3px #000;
 }
@@ -256,7 +258,9 @@ h2 {
     }
     
     .about p {
-        padding: 50px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 50px;
         font-size: 12px;
         margin: auto;
     }
@@ -289,10 +293,21 @@ h2 {
         width: 100%;
     }
     
+    .about h1 {
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 20px;
+        font-size: 20px;
+    }
+    
     .about p {
         padding: 50px;
-        font-size: 12px;
+        font-size: 16px;
         margin: auto;
+    }
+    
+    .contactPic {
+        height: 125px;
     }
 }
 
