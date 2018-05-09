@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { EmailService } from '../services/email/email.service';
+import { NG_VALIDATORS } from '@angular/forms';
 //import { MaterialModule } from '@angular/material';
 
 @Component({
