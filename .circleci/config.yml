@@ -27,7 +27,7 @@ jobs:
           - v1-dependencies-
 
       - run: 
-      - if [[ -z $CI_PULL_REQUEST ]] ; then yarn install; fi
+      - if yarn install
 
       - save_cache:
           paths:
@@ -35,5 +35,18 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: - if [[ -z $CI_PULL_REQUEST ]] ; then yarn test; fi
-
+      - run: yarn test
+      
+      deployment:
+    production:
+    branch: master
+    codedeploy:
+      phillstack:
+        application_root: /
+        region: us-west-1
+        revision_location:
+          revision_type: S3
+          s3_location:
+            bucket: phillstack.com
+            key_pattern: phillstack-{BRANCH}-{SHORT_COMMIT}
+        deployment_group: production-group
