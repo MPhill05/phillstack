@@ -36,16 +36,16 @@ jobs:
       # run tests!
       - run: yarn test
       
-    deploy:
-      production:
-        branch: master
-        codedeploy:
-          phillstack:
-            application_root: /
-            region: us-west-1
-            revision_location:
-              revision_type: S3
-              s3_location:
-                bucket: phillstack.com
-                key_pattern: phillstack-{BRANCH}-{SHORT_COMMIT}
-            deployment_group: production-group
+      deployment:
+        production:
+          branch: master
+          codedeploy:
+            phillstack:
+              application_root: /
+              region: us-west-1
+              revision_location:
+                revision_type: S3
+                s3_location:
+                  bucket: phillstack.com
+                  key_pattern: phillstack-{BRANCH}-{SHORT_COMMIT}
+              deployment_group: production-group
