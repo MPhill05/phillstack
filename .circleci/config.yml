@@ -36,8 +36,8 @@ jobs:
       # run tests!
       - run: yarn test
       
-      deployment:
-        prod:
-          branch: master
-          commands:
-            - aws s3 sync /home/ubuntu/S3ContinuousDeploy s3://s3awscd --delete
+deployment:
+  prod:
+    branch: master
+    commands:
+      - aws s3 sync /home/ubuntu/S3ContinuousDeploy s3://s3awscd --delete
