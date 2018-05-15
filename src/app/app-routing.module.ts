@@ -9,7 +9,8 @@ const appRoutes: Routes = [
     { path: '', redirectTo: '/', pathMatch: 'full' },
     { path: 'grant', component: GrantComponent },
     { path: 'mark', component: MarkComponent },
-    { path: '', component: IndexComponent }
+    { path: '', component: IndexComponent },
+    { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({
