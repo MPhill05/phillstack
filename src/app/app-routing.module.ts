@@ -16,7 +16,8 @@ const appRoutes: Routes = [
     { path: 'grant', component: GrantComponent },
     { path: 'mark', component: MarkComponent },
     { path: 'projects', component: ProjectsComponent },
-    { path: '', component: IndexComponent }
+    { path: '', component: IndexComponent },
+    { path: '**', redirectTo: '', pathMatch: 'full' }
 
 ];
 
