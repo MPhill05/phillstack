@@ -7,6 +7,7 @@ import { GrantComponent } from './grant/grant.component';
 import { MarkComponent } from './mark/mark.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { IndexComponent } from './index/index.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -20,7 +21,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes)],
+    imports: [RouterModule.forRoot(appRoutes, { useHash: true })],
     exports: [RouterModule]
 })
 export class AppRoutingModule {
