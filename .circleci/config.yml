@@ -36,7 +36,7 @@ jobs:
       # run tests!
       - run: yarn test
       
-      deployment:
+      - deployment:
         production:
           branch: master
           codedeploy:
