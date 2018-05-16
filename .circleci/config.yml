@@ -26,7 +26,7 @@ jobs:
           - v1-dependencies-
 
       - run: if [[ ! -z $CI_PULL_REQUEST ]] ; then 
-            sudo apt-get -y -qq install awscli 
+            sudo apt-get -y -qq install awscli ;
             yarn install
            ; fi
            
@@ -41,6 +41,6 @@ jobs:
            ; fi
       
       - run: if [[ -z $CI_PULL_REQUEST ]] ; then 
-            yarn ng build --prod --output-hashing none
+            yarn ng build --prod --output-hashing none ;
             aws s3 sync dist s3://phillstack.com --delete --region us-west-1
            ; fi
