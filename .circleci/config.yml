@@ -25,7 +25,8 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - if [[ ! -z $CI_PULL_REQUEST ]] ; then echo pull request ; fi
+      #!bin/sh
+         if [[ ! -z $CI_PULL_REQUEST ]] ; then echo pull request ; fi
       - run: echo $CI_PULL_REQUEST
       
       - run: sudo apt-get -y -qq install awscli
