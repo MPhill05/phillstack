@@ -25,19 +25,22 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: if [[ ! -z $CI_PULL_REQUEST ]] ; then echo pull request ; fi
-      - run: echo $CI_PULL_REQUEST
-      
-      - run: sudo apt-get -y -qq install awscli
-      - run: yarn install
-      
+      - run: if [[ ! -z $CI_PULL_REQUEST ]] ; then 
+            sudo apt-get -y -qq install awscli 
+            yarn install
+           ; fi
+           
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: yarn test
+       - run: if [[ ! -z $CI_PULL_REQUEST ]] ; then 
+            yarn test
+           ; fi
       
-      - run: yarn ng build --prod --output-hashing none
-      - run: aws s3 sync dist s3://phillstack.com --delete --region us-west-1
+      - run: if [[ -z $CI_PULL_REQUEST ]] ; then 
+            yarn ng build --prod --output-hashing none
+            aws s3 sync dist s3://phillstack.com --delete --region us-west-1
+           ; fi
