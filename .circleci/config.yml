@@ -19,7 +19,6 @@ jobs:
     steps:
       - checkout
       # Download and cache dependencies
-      - run: echo $CI_PULL_REQUEST
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
@@ -27,15 +26,7 @@ jobs:
           - v1-dependencies-
 
       - run: sudo apt-get -y -qq install awscli
-      commands:
-      - echo "make tags run in 2.0"
-
-      #    name: Deploy Master to Heroku
-      #    command: |
-      #      if [ "${CI_PULL_REQUEST}" ]; then
-      #        yarn install
-      #      fi
-
+      
       - save_cache:
           paths:
             - node_modules
