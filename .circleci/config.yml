@@ -26,7 +26,7 @@ jobs:
           - v1-dependencies-
 
       - run: sudo apt-get -y -qq install awscli
-      - run: - if [[ ! -z $CI_PULL_REQUEST ]] ; then yarn install ; fi
+      - if [[ ! -z $CI_PULL_REQUEST ]] ; then - run: yarn install ; fi
 
       - save_cache:
           paths:
