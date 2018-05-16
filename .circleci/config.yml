@@ -37,4 +37,4 @@ jobs:
       - run: yarn test
       
       - run: yarn ng build --prod --output-hashing none
-      - run: aws s3 sync dist s3://phillstack.com --delete --source-region us-west-1
+      - run: aws s3 sync dist s3://phillstack.com --delete --region us-west-1
