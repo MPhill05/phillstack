@@ -25,6 +25,11 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
+      - run:
+            command: |
+            echo "Env variables:"
+            echo $CI_PULL_REQUEST
+            
       - run: sudo apt-get -y -qq install awscli
       - run: yarn install
 
