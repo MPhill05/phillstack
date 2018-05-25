@@ -17,20 +17,22 @@ export class IndexComponent implements OnInit {
   public subject;
   public message;
   public subscribe;
-  public isSubscribed;
+  public isSubmitted;
 
   constructor(private emailService: EmailService) {
-    this.isSubscribed = false;
+    this.isSubmitted = false;
   }
 
   ngOnInit() {
   }
 
   public sendEmail() {
+    this.isSubmitted = true;
+    console.log(this.subscribe);
     this.emailService.sendEmail(this.name, this.email, this.subject, this.message, this.subscribe).then((data) => {
-      this.isSubscribed = true;
+      this.isSubmitted = true;
     }).catch((error) => {
-      this.isSubscribed = null;
+      this.isSubmitted = null;
     });
   }
 
