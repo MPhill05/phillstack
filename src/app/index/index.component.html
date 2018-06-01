@@ -10,16 +10,16 @@
 </div>
 
 <section class="about" id="whatWeDo">
-    <div class="container">
-        <h2>What we can build for you</h2>
+    <div class="container" [@parentAnimation]="state">
+        <h2 class="child">What we can build for you</h2>
         <div class="row">	
-            <div class="col-12 col-md-4">
+            <div class="child col-12 col-md-4">
                 <img class="SEO" src="../../assets/SEO.jpg" alt="SEO">
                 <h4>SEO</h4>
                 <p>We focus on SEO to make sure your web pages come up on the
                     first page of search engines.</p>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="child col-12 col-md-4">
                 <img class="analytics" src="../../assets/analytics.jpg"
                     alt="Analytics">
                 <h4>Analytics</h4>
@@ -27,7 +27,7 @@
                     demographic is paying attention to your tech, and provide you
                     insight on how to reach other customers.</p>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="child col-12 col-md-4">
                 <img class="speed" src="../../assets/speed.jpg" alt="Speed">
                 <h4>Responsive Mobile &amp; Web Apps</h4>
                 <p>Our web apps are built with Angular JavaScript. Think light
@@ -129,10 +129,10 @@
 </section>
 
 <section class="contact" id="contactUs">
-	<div class="contactForm">
-		<h2>Contact Us!</h2>
+	<div class="contactForm" [@parentAnimation]="state">
+		<h2 class="child">Contact Us!</h2>
 		<form (submit)="sendEmail()" method="post" enctype="text/plain" *ngIf="!isSubscribed">
-			<fieldset class="form-group">
+			<fieldset class="child form-group">
 				<input [(ngModel)]="name" class="form-control" id="name" name="name"
 					placeholder="Full Name" required>
 			</fieldset>
@@ -140,7 +140,7 @@
 				<input 
 				[(ngModel)]="email"
 				type="email" 
-				class="form-control"
+				class="child form-control"
 				id="email" 
 				name="email" 
 				placeholder="Email" 
@@ -148,22 +148,22 @@
 				required
 				>
 			</fieldset>
-			<fieldset class="form-group">
+			<fieldset class="child form-group">
 				<input [(ngModel)]="subject" class="form-control" id="subject"
 					name="subject" placeholder="Subject" required>
 			</fieldset>
-			<fieldset class="form-group">
+			<fieldset class="child form-group">
 				<textarea [(ngModel)]="message" class="form-control" id="content"
 					name="message" placeholder="Message" required></textarea>
 			</fieldset>
 			<div title="subscribeButton">
-				<div class="subscribe">
+				<div class="child subscribe">
 					<input type="checkbox" value="None" [(ngModel)]="subscribe"
 						id="subscribe" name="check" checked /> <label for="subscription">Stay
 						up to date with us!</label>
 				</div>
 			</div>
-			<button type="submit" id="submit" class="btn btn-primary">Submit</button>
+			<button type="submit" id="submit" class="child btn btn-primary">Submit</button>
 		</form>
 		<h1 *ngIf="isSubscribed" class="response">THANK YOU</h1>
 <!--		<h1 *ngIf="isSubscribed == null" class="response">AN ERROR HAS OCCURRED. PLEASE REFRESH THE PAGE AND TRY AGAIN</h1>-->

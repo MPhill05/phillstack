@@ -16,7 +16,6 @@ import {ScrollToModule} from 'ng2-scroll-to';
 
 import {EmailService} from './services/email/email.service';
 import {AppConstants} from './app.constants';
-//import {MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule} from '@angular/material';
 import 'hammerjs';
 import { FooterComponent } from './footer/footer.component';
 
@@ -37,7 +36,7 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-//    BrowserAnimationsModule,
+    BrowserAnimationsModule,
 //    MdButtonModule,
 //    MdMenuModule,
 //    MdCardModule,
