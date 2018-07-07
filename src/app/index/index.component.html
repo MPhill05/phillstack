@@ -129,12 +129,16 @@
 </section>
 
 <section class="contact" id="contactUs">
-	<div class="contactForm" [@parentAnimation]="state">
-		<h2 class="child">Contact Us!</h2>
-		<form (submit)="sendEmail()" method="post" enctype="text/plain" *ngIf="!isSubscribed">
-			<fieldset class="child form-group">
+	<div class="contactForm">
+		<h2>Contact Us!</h2>
+		<form (ngSubmit)="sendEmail()" method="post" enctype="text/plain" *ngIf="!isSubmitted" #contactForm="ngForm">
+			<fieldset class="form-group">
 				<input [(ngModel)]="name" class="form-control" id="name" name="name"
-					placeholder="Full Name" required>
+					placeholder="Full Name" required #nameControl="ngModel">
+					<div [hidden]="nameControl.valid || nameControl.untouched"
+					  class="invalid-form">
+					  Name is required
+					</div>
 			</fieldset>
 			<fieldset class="form-group">
 				<input 
@@ -146,15 +150,28 @@
 				placeholder="Email" 
 				pattern="[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" 
 				required
+				#emailControl="ngModel"
 				>
+				<div [hidden]="emailControl.valid || emailControl.untouched"
+					  class="invalid-form">
+					  Email is required in a valid format
+				</div>
 			</fieldset>
 			<fieldset class="child form-group">
 				<input [(ngModel)]="subject" class="form-control" id="subject"
-					name="subject" placeholder="Subject" required>
+					name="subject" placeholder="Subject" required #subjectControl="ngModel">
+				<div [hidden]="subjectControl.valid || subjectControl.untouched"
+				  class="invalid-form">
+				  A subject is required
+				</div>
 			</fieldset>
 			<fieldset class="child form-group">
 				<textarea [(ngModel)]="message" class="form-control" id="content"
-					name="message" placeholder="Message" required></textarea>
+					name="message" placeholder="Message" required #messageControl="ngModel"></textarea>
+					<div [hidden]="messageControl.valid || messageControl.untouched"
+					  class="invalid-form">
+					  A message is required
+					</div>
 			</fieldset>
 			<div title="subscribeButton">
 				<div class="child subscribe">
@@ -163,9 +180,9 @@
 						up to date with us!</label>
 				</div>
 			</div>
-			<button type="submit" id="submit" class="child btn btn-primary">Submit</button>
+			<button type="submit" id="submit" class="btn btn-primary" [disabled]="!contactForm.form.valid">Submit</button>
 		</form>
-		<h1 *ngIf="isSubscribed" class="response">THANK YOU</h1>
+		<h1 *ngIf="isSubmitted" class="response">THANK YOU</h1>
 <!--		<h1 *ngIf="isSubscribed == null" class="response">AN ERROR HAS OCCURRED. PLEASE REFRESH THE PAGE AND TRY AGAIN</h1>-->
 	</div>
 </section>

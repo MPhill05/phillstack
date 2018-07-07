@@ -41,8 +41,9 @@ export class IndexComponent implements OnInit {
   public subject;
   public message;
   public subscribe;
-  public isSubscribed;
+  public isSubmitted;
 
+<<<<<<< HEAD
   state = 'hide'
 
   constructor(private emailService: EmailService, public el: ElementRef) {
@@ -61,15 +62,22 @@ export class IndexComponent implements OnInit {
       }
 
     }
+=======
+  constructor(private emailService: EmailService) {
+    this.isSubmitted = false;
+  }
+>>>>>>> 0107b90359f5d44976c4fecacab3edbdafe274b6
 
   ngOnInit() {
   }
 
   public sendEmail() {
+    this.isSubmitted = true;
+    console.log(this.subscribe);
     this.emailService.sendEmail(this.name, this.email, this.subject, this.message, this.subscribe).then((data) => {
-      this.isSubscribed = true;
+      this.isSubmitted = true;
     }).catch((error) => {
-      this.isSubscribed = null;
+      this.isSubmitted = null;
     });
   }
 
