@@ -43,11 +43,10 @@ export class IndexComponent implements OnInit {
   public subscribe;
   public isSubmitted;
 
-<<<<<<< HEAD
   state = 'hide'
 
   constructor(private emailService: EmailService, public el: ElementRef) {
-    this.isSubscribed = false;
+    this.isSubmitted = false;
    }
 
   @HostListener('window:scroll', ['$event'])
@@ -62,11 +61,6 @@ export class IndexComponent implements OnInit {
       }
 
     }
-=======
-  constructor(private emailService: EmailService) {
-    this.isSubmitted = false;
-  }
->>>>>>> 0107b90359f5d44976c4fecacab3edbdafe274b6
 
   ngOnInit() {
   }
