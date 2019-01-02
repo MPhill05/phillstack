@@ -43,7 +43,7 @@ export class IndexComponent implements OnInit {
   public subscribe;
   public isSubmitted;
 
-  state = 'hide'
+  state = 'hide';
 
   constructor(private emailService: EmailService, public el: ElementRef) {
     this.isSubmitted = false;
@@ -51,13 +51,13 @@ export class IndexComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
     checkScroll() {
-      const componentPosition = this.el.nativeElement.offsetTop
-      const scrollPosition = window.pageYOffset
+      const componentPosition = this.el.nativeElement.offsetTop;
+      const scrollPosition = window.pageYOffset;
 
       if (scrollPosition >= componentPosition) {
-        this.state = 'show'
+        this.state = 'show';
       } else {
-        this.state = 'hide'
+        this.state = 'hide';
       }
 
     }
