@@ -10,16 +10,16 @@
 </div>
 
 <section class="about" id="whatWeDo">
-    <div class="container">
-        <h2>What we can build for you</h2>
-        <div class="row">	
-            <div class="col-12 col-md-4">
+    <div class="container" [@parentAnimation]="state">
+        <h2 class="child">What we can build for you</h2>
+        <div class="row">
+            <div class="child col-12 col-md-4">
                 <img class="SEO" src="../../assets/SEO.jpg" alt="SEO">
                 <h4>SEO</h4>
                 <p>We focus on SEO to make sure your web pages come up on the
                     first page of search engines.</p>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="child col-12 col-md-4">
                 <img class="analytics" src="../../assets/analytics.jpg"
                     alt="Analytics">
                 <h4>Analytics</h4>
@@ -27,7 +27,7 @@
                     demographic is paying attention to your tech, and provide you
                     insight on how to reach other customers.</p>
             </div>
-            <div class="col-12 col-md-4">
+            <div class="child col-12 col-md-4">
                 <img class="speed" src="../../assets/speed.jpg" alt="Speed">
                 <h4>Responsive Mobile &amp; Web Apps</h4>
                 <p>Our web apps are built with Angular JavaScript. Think light
@@ -40,8 +40,24 @@
 
 <section class="projects">
 	<div class="container">
-		<h2>Some of our previous projects</h2>
-		<div class="row" id="Coffi">
+    <h2>Some of our previous projects</h2>
+    <div class="row" id="Yikes">
+			<div class="col-xs-12 col-md-6">
+				<img class="yikes" src="../../assets/yikesmbp.png"
+					alt="Yikes">
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<h3>Yikes</h3>
+				<h5>Website</h5>
+				<p>A minimal website make for a music artist with slight variations between the desktop and mobile versions,
+          created with Angular 6. The site is made to be simple, direct and showcase the music with very simple animations.</p>
+        <a href="http://www.yikessound.com" style="text-decoration: none;" target="_blank">
+          <button type="button" class="btn btn-primary">View Project</button>
+				</a>
+			</div>
+		</div>
+		<br>
+		<!-- <div class="row" id="Coffi">
 			<div class="col-xs-12 col-md-6">
 				<img class="coffi" src="../../assets/CoffiX.png"
 					alt="Coffi">
@@ -54,7 +70,7 @@
 				</a>
 			</div>
 		</div>
-		<br>
+		<br> -->
 		<div class="row">
 			<div class="col-xs-12 col-md-6">
 				<img class="boombox" src="../../assets/boomboxcartelsite.png"
@@ -67,12 +83,13 @@
 					duo. This site was made with a focus on keeping the design minimal
 					&amp; functional, and so that any fan of any age could explore the
 					site with ease.</p>
-				<a href="http://www.boomboxcartel.com" style="text-decoration: none;" target="_blank">    <button type="button" class="btn btn-primary">View Project</button>
+        <a href="http://www.boomboxcartel.com" style="text-decoration: none;" target="_blank">
+          <button type="button" class="btn btn-primary">View Project</button>
 				</a>
 			</div>
 		</div>
 		<br>
-		<div class="row" id="barber">
+		<!-- <div class="row" id="barber">
 			<div class="col-xs-12 col-md-6">
 				<img class="barber" src="../../assets/recodiamondsite.png"
 					alt="Reco Diamond">
@@ -86,11 +103,12 @@
 					match that, but we wanted to make sure the tech matched his goals.
 					We improved the speed of Reco's site by converting it to Angular,
 					and incorporated analytics and SEO to help boost his business.</p>
-				<a href="http://www.recodiamond.com" style="text-decoration: none;" target="_blank">       <button type="button" class="btn btn-primary">View Project</button>
+				<a href="http://www.recodiamond.com" style="text-decoration: none;" target="_blank">
+					<button type="button" class="btn btn-primary">View Project</button>
 				</a>
 			</div>
 		</div>
-		<br>
+		<br> -->
 		<div class="row">
 			<div class="col-xs-12 col-md-6">
 				<img class="msdos" src="../../assets/bmagazusite.png"
@@ -122,9 +140,9 @@
 			exactly what we were looking for ahead of schedule, and keeping me
 			constantly abreast of progress. They truly went above and beyond,
 			even completing small revisions after the task was done, and writing
-			detailed instructions to help us in the future. &rdquo; <cite>&mdash;
-				Brian Magazu</cite>
+			detailed instructions to help us in the future. &rdquo;
 		</blockquote>
+		<cite><img class="bMagazu" src="../../assets/bMagazu.jpg" alt="Brian Photo"> &mdash; Brian Magazu</cite>
 	</div>
 </section>
 
@@ -141,14 +159,14 @@
 					</div>
 			</fieldset>
 			<fieldset class="form-group">
-				<input 
+				<input
 				[(ngModel)]="email"
-				type="email" 
-				class="form-control"
-				id="email" 
-				name="email" 
-				placeholder="Email" 
-				pattern="[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" 
+				type="email"
+				class="child form-control"
+				id="email"
+				name="email"
+				placeholder="Email"
+				pattern="[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*"
 				required
 				#emailControl="ngModel"
 				>
@@ -157,7 +175,7 @@
 					  Email is required in a valid format
 				</div>
 			</fieldset>
-			<fieldset class="form-group">
+			<fieldset class="child form-group">
 				<input [(ngModel)]="subject" class="form-control" id="subject"
 					name="subject" placeholder="Subject" required #subjectControl="ngModel">
 				<div [hidden]="subjectControl.valid || subjectControl.untouched"
@@ -165,7 +183,7 @@
 				  A subject is required
 				</div>
 			</fieldset>
-			<fieldset class="form-group">
+			<fieldset class="child form-group">
 				<textarea [(ngModel)]="message" class="form-control" id="content"
 					name="message" placeholder="Message" required #messageControl="ngModel"></textarea>
 					<div [hidden]="messageControl.valid || messageControl.untouched"
@@ -174,7 +192,7 @@
 					</div>
 			</fieldset>
 			<div title="subscribeButton">
-				<div class="subscribe">
+				<div class="child subscribe">
 					<input type="checkbox" value="None" [(ngModel)]="subscribe"
 						id="subscribe" name="check" checked /> <label for="subscription">Stay
 						up to date with us!</label>
