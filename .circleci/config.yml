@@ -33,9 +33,9 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: if [[ ! -z $CI_PULL_REQUEST ]] ; then 
+      #- run: if [[ ! -z $CI_PULL_REQUEST ]] ; then 
             # yarn test
-           ; fi
+      #    ; fi
       
       - run: if [[ -z $CI_PULL_REQUEST ]] ; then 
             sudo apt-get -y -qq install awscli ;
