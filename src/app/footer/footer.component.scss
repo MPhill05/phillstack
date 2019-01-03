@@ -1,16 +1,52 @@
 .navbar-custom {
-    background-color: black;
+    background-color: #333;
+    padding: 25px;
     text-align: center;
-    color: #05c4b4;
+    color: #888;
     margin: 0;
 }
 
 #footerSocials {
     padding: 10px;
     img {
-        width: 23px;
-        height: 23px;
+        width: 15px;
+        height: 15px;
     }
+}
+
+.social-links li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.social-links {
+    list-style: none;
+    float: left;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+    font-size: 140%;
+    color: #888;
+}
+
+.fa-facebook-f,
+.fa-twitter,
+.fa-github {
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.fa-facebook-f:hover {
+    color: #3b5998;
+}
+
+.fa-twitter:hover {
+    color: #00aced;
+}
+
+.fa-github:hover {
+    color: #6cc644;
 }
 
 

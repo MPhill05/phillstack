@@ -1,4 +1,7 @@
-img {
+.mainLogo {
+    height: 100px;
+    width: 150px;
+    top: 20px;
     background: transparent;
     top: 0;
     left: 0;
@@ -6,12 +9,6 @@ img {
     z-index: 0;
     outline : none;
     cursor: pointer;
-}
-
-.mainLogo {
-    height: 100px; 
-    width: 150px;
-    top: 20px;
 }
 
 @media (max-width: 956px) {
@@ -90,7 +87,7 @@ h2{
     left: 0px;
     width: 17px;
     height: 2px;
-    background-color: #999;
+    background-color: #5F7C8A;
     &.line.l2{
         top: 50%;
     }

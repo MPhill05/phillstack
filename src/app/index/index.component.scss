@@ -22,6 +22,28 @@ img {
     height: auto;
 }
 
+.ng-invalid.ng-untouched {
+	border-left: none;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.invalid-form {
+	background: transparent;
+    border: none;
+    outline: none;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #a94442;
+}
+
 .arrow {
     position: fixed;
     bottom: 0;
@@ -55,8 +77,9 @@ img {
 .cover {
     display: table;
     width: 100%;
-    box-shadow: inset 0 0 100px #000; 
-    background: url(../../assets/code.jpg) no-repeat center center fixed; 
+    box-shadow: inset 0 0 100px #000;
+    background:  -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url(../../assets/code.jpg) no-repeat center center fixed;
+    background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../assets/code.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -123,7 +146,7 @@ hr {
 }
 
 .about {
-    background: white;
+    background: #f4f4f4;
     height: auto;
     width: 100%;
     margin: auto;
@@ -152,22 +175,24 @@ hr {
     }
 }
 
- .boombox, .barber, .msdos {
+ .yikes, .boombox, .barber, .msdos {
     height: auto;
     width: auto;
     margin-left: auto;
     margin-right: auto;
     display: block;
+    color: #333;
 }
 
 .coffi {
     height: 550px;
     width: auto;
     margin: auto;
+    color: #333;
 }
 
 .testimonials {
-    background: #292929;
+    background: #333;
 }
 
 .testimonials h2 {
@@ -183,21 +208,29 @@ blockquote {
     color: white;
 }
 
-blockquote cite {
-    display: block;
-    text-align: right;
+cite {
     text-transform: uppercase;
     font-family: Helvetica, Arial, sans-serif;
-    font-style: normal;
+    font-style: italic;
     font-size: 15px;
     font-weight: bold;
     color: #888;
+    margin-top: 25px;
+    display: block;
+}
+
+cite img {
+    height: 75px;
+    border-radius: 50%;
+    margin-right: 10px;
     margin-top: 20px;
+    vertical-align: middle;
 }
 
 .contact {
 	width: 100%;
-    background: url(../../assets/gpsMap.jpg) fixed; 
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url(../../assets/contactUs.png) fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../assets/contactUs.png) fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -285,13 +318,13 @@ h2 {
         text-align: center;
         font-size: 20px;
     }
-    
+
     .contactForm {
         margin-top: 0;
         padding: inherit;
         width: 100%;
     }
-    
+
     .boombox .msdos .barber {
         width: 300px;
         height: 150px;
