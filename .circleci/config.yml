@@ -34,7 +34,7 @@ jobs:
         
       # run tests!
       - run: if [[ ! -z $CI_PULL_REQUEST ]] ; then 
-            yarn test
+            # yarn test
            ; fi
       
       - run: if [[ -z $CI_PULL_REQUEST ]] ; then 
