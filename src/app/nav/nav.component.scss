@@ -16,22 +16,26 @@
         height: 75px;
         width: 100px;
     }
+    #toggle {
+      top: 10px;
+      right: 30px;
+    }
 }
 
-a, a:active, a:focus{
+a, a:active, a:focus {
 	text-decoration: none;
 	outline: none;
 	transition: all .2s ease;
 }
 
-h1{
+h1 {
     font-weight: 900;
     font-size: 32px;
     line-height: 32px;
     margin-bottom: 14px;
 }
 
-h2{
+h2 {
     font-family: 'Merriweather', serif;
     font-weight: 300;
     font-size: 16px;
@@ -39,59 +43,59 @@ h2{
     margin-top: 0px;
 }
 
-#toggle{
+#toggle {
     position: fixed;
     right: 50px;
-    top: 50px;
+    top: 40px;
     width: 50px;
     height: 50px;
     z-index: 150;
     margin-right: 5px;
 }
 
-#toggle ul{
+#toggle ul {
     margin: auto;
     text-align: center;
     list-style-type: none;
-    width: 17px;
+    width: 20px;
     height: 50px;
 }
 
 
-#toggle ul li{
+#toggle ul li {
     position: relative;
     width: 17px;
     height: 12px;
     cursor: pointer;
 }
 
-#toggle ul li a{
+#toggle ul li a {
 	display: block;
 	width: 100%;
 	height: 100%;
 }
 
-#toggle ul li a:hover span{
+#toggle ul li a:hover span {
 	transition: all .4s ease;
 	background-color: #5F7C8A;
 }
 
-#toggle.toggled ul li a span{
+#toggle.toggled ul li a span {
 	background-color: #444;
     z-index: 99999;
 }
 
 
-#toggle ul li span{
+#toggle ul li span {
     position: absolute;
     left: 0px;
     width: 17px;
     height: 2px;
     background-color: #5F7C8A;
-    &.line.l2{
+    &.line.l2 {
         top: 50%;
     }
-    &.line.l3{
+    &.line.l3 {
         top: 100%;
     }
 }
@@ -116,7 +120,7 @@ h2{
     transform: translateY(-6px) translateX(0px) rotate(-45deg);
 }
 
-section.panel#full-screen-nav{
+section.panel#full-screen-nav {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -126,26 +130,26 @@ section.panel#full-screen-nav{
     transition: all 1000ms;
     z-index: 99;
     pointer-events: none;
-	&.active{
+	&.active {
         opacity: .95;
 		pointer-events: auto;
         overflow: hidden;
         position: fixed;
-		nav#nav{
-            ul li{
+		nav#nav {
+            ul li {
 				opacity: 1;
 				transform:translateY(0px);
 				transition: all .5s ease;
-				&:nth-child(2){
+				&:nth-child(2) {
 					transition-delay: .2s;
 				}
-				&:nth-child(3){
+				&:nth-child(3) {
 					transition-delay: .4s;
 				}
-				&:nth-child(4){
+				&:nth-child(4) {
 					transition-delay: .6s;
 				}
-				&:nth-child(5){
+				&:nth-child(5) {
 					transition-delay: .8s;
 				}
 			}
@@ -157,41 +161,41 @@ section.panel#full-screen-nav{
     text-align: center;
 }
 
-nav#nav{
+nav#nav {
 	position: relative;
 	height: 100%;
-	ul{
+	ul {
 		position: absolute;
         width: 100%;
 		top: 200px;
         text-align: center;
 		list-style-type: none;
-		li{
+		li {
 			border-bottom: 1px solid #ddd;
 			padding-bottom: 25px;
             padding-left: 30px;
             padding-right: 30px;
 			opacity: 0;
             display: inline-block;
-			&:not(:first-child){
+			&:not(:first-child) {
 				padding-top: 25px;
 			}
-			a{
+			a {
 				color: #444;
 				font-weight: 700;
 				font-size: 32px;
                 text-align: center;
                 align-content: center;
-				span{
+				span {
 					display: block;
 					font-size: 16px;
 					color: #777;
 					font-weight: 300;
 					transition: all .2s ease;
 				}
-				&:hover{
+				&:hover {
 					color: #00e5ff;
-					span{
+					span {
 						color: #AAA;
 					}
 				}
@@ -200,10 +204,10 @@ nav#nav{
 	}
 }
 
-section.panel#intro{
+section.panel#intro {
     width: 100%;
     height: 100vh;
-  article{
+  article {
     display: table;
     text-align: center;
     width: 100%;
@@ -214,11 +218,18 @@ section.panel#intro{
     height: 100%;
     width: 100%;
     vertical-align: middle;
-    h1{
+    h1 {
       color: #fff;
     }
-    h2{
+    h2 {
        color: #999;
     }
+  }
+}
+
+@media only screen and ( max-width : 849px ) {
+  #toggle {
+    top: 20px;
+    width: 20px;
   }
 }
